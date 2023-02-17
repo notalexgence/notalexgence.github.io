@@ -1,10 +1,11 @@
 :root {
-	--pink: rgb(231, 42, 131);
+	--pink: rgb(225, 42, 231);
 	--neon: rgb(255, 255, 255);
 }
 
 * {
 	font-family: monospace;
+	box-sizing: border-box;
 }
 
 html, body {
@@ -64,4 +65,31 @@ header > h1 > .titleLet {
 		filter: opacity(30%);  
 		text-shadow: none;
 	} 
+}
+
+main {
+	padding: 20px 0px;
+}
+
+menu {
+	margin: 0;
+	padding: 0;
+	font-size: 1.2em;
+}
+
+menu > a::before {
+	content: ">>";
+	margin-right: 10px;
+}
+
+menu > a {
+	display: block;
+	padding-bottom: 5px;
+	color: var(--neon);
+	text-decoration: none;
+}
+
+menu > a:hover {
+	text-decoration: underline dotted;
+	text-underline-offset: 1px;
 }
