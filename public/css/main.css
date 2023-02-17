@@ -60,7 +60,8 @@ header > h1 > .titleLet {
 	
 	}
 	
-	20%, 24%, 55% {     
+	20%, 24%, 55% {
+		filter: opacity(30%);  
 		text-shadow: none;
 	} 
 }
