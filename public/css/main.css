@@ -1,5 +1,66 @@
-body {
-	background-color: black;
-	color: pink;
+:root {
+	--pink: rgb(231, 42, 131);
+	--neon: rgb(255, 255, 255);
 }
 
+* {
+	font-family: monospace;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: black;
+	color: var(--neon);
+	padding: 10px 20px;
+}
+
+header > h1 {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-size: 3em;
+	letter-spacing: 1.2em;
+	font-weight: lighter;
+	text-transform: uppercase;
+	text-decoration: underline;
+	text-underline-offset: -2px;
+	text-shadow: 
+		/* White glow */
+		0 0 7px var(--neon),
+		0 0 10px var(--neon),
+		0 0 21px var(--neon),
+		/* Pink glow */
+		0 0 42px var(--pink),
+		0 0 82px var(--pink),
+		0 0 92px var(--pink),
+		0 0 102px var(--pink),
+		0 0 151px var(--pink);
+}
+
+header > h1 > .titleLet {
+	animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+	0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+		text-shadow:
+		0 0 4px var(--neon),
+		0 0 11px var(--neon),
+		0 0 19px var(--neon),
+		0 0 40px var(--pink),
+		0 0 80px var(--pink),
+		0 0 90px var(--pink),
+		0 0 100px var(--pink),
+		0 0 150px var(--pink);
+	
+	}
+	
+	20%, 24%, 55% {     
+		text-shadow: none;
+	} 
+}
