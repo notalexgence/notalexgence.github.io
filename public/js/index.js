@@ -1,4 +1,4 @@
-let titleStr = "empty";
+let titleStr = "notalexgence";
 let title = document.querySelector("header > h1");
 
 for (let i = 0; i < titleStr.length; i++) {
