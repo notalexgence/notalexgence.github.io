@@ -43,7 +43,7 @@ header > h1 {
 }
 
 header > h1 > .titleLet {
-	animation: flicker 1.5s infinite alternate;
+	animation: flicker 2s infinite alternate;
 }
 
 @keyframes flicker {
@@ -62,7 +62,7 @@ header > h1 > .titleLet {
 	}
 	
 	20%, 24%, 55% {
-		filter: opacity(30%);  
+		/* filter: opacity(30%);  */
 		text-shadow: none;
 	} 
 }

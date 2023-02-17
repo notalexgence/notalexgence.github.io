@@ -9,7 +9,8 @@ for (let i = 0; i < titleStr.length; i++) {
     title.append(span);
 }
 
-let times = ["500ms", "1s", "1.5s", "2s", "2.5s", "3s"];
+// let times = ["500ms", "1s", "1.5s", "2s", "2.5s", "3s"];
+let times = ["2s", "2.5s", "3s", "4s", "5s", "6s", "7s"];
 let titleSpans = document.querySelectorAll('.titleLet');
 titleSpans.forEach(titleSpan => {
     titleSpan.addEventListener('animationiteration', (event) => {
