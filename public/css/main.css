@@ -1,5 +1,6 @@
 :root {
 	--pink: rgb(225, 42, 231);
+	--lighterpink: rgb(226, 132, 229);
 	--neon: rgb(255, 255, 255);
 }
 
@@ -40,6 +41,7 @@ header > h1 {
 		0 0 92px var(--pink),
 		0 0 102px var(--pink),
 		0 0 151px var(--pink);
+	word-wrap: break-word;
 }
 
 header > h1 > .titleLet {
@@ -50,6 +52,7 @@ header > h1 > .titleLet {
 	0%, 18%, 22%, 25%, 53%, 57%, 100% {
 
 		text-shadow:
+		0px 2px 5px var(--pink),
 		0 0 4px var(--neon),
 		0 0 11px var(--neon),
 		0 0 19px var(--neon),
@@ -57,8 +60,8 @@ header > h1 > .titleLet {
 		0 0 80px var(--pink),
 		0 0 90px var(--pink),
 		0 0 100px var(--pink),
-		0 0 150px var(--pink);
-	
+		0 0 150px var(--pink),
+		0 10px 50px var(--lighterpink);
 	}
 	
 	20%, 24%, 55% {
@@ -68,7 +71,10 @@ header > h1 > .titleLet {
 }
 
 main {
+	height: 100%;
 	padding: 20px 0px;
+	display: grid;
+	grid-template-columns: 20% auto;
 }
 
 menu {
@@ -87,6 +93,16 @@ menu > a {
 	padding-bottom: 5px;
 	color: var(--neon);
 	text-decoration: none;
+	text-shadow: 
+		/* White glow */
+		0 0 7px var(--neon),
+		0 0 10px var(--neon),
+		/* Pink glow */
+		0 0 42px var(--lighterpink),
+		0 0 60px var(--lighterpink),
+		0 0 80px var(--lighterpink),
+		0 0 90px var(--lighterpink),
+		0 2px 1px var(--lighterpink);
 }
 
 menu > a:hover {
