@@ -110,12 +110,57 @@ menu > a:hover {
 	text-underline-offset: 1px;
 }
 
-ul, li {
+main ul, main li {
 	margin: 0;
 	padding: 0;
+	list-style: none;
+}
+
+main li::before {
+	content: "_";
+	margin-right: 2px;
+	animation: blink 1s normal infinite;
+}
+
+@keyframes blink {
+	0% {
+		filter: opacity(100%);
+	}
+
+	50% {
+		filter: opacity(0%);
+	}
+
+	100% {
+		filter: opacity(100%);
+	}
+}
+
+main li {
+	padding-bottom: 5px;
+}
+
+main li > a {
+	color: var(--neon);
+	text-decoration: none;
+}
+
+main li > a:hover {
+	text-decoration: underline dotted;
 }
 
 article > h1 {
 	margin: 0;
 	padding: 0;
+}
+
+article li::before {
+	content: "";
+}
+
+article h2 {
+	margin: 0;
+	padding: 5px 0;
+
+	font-size: 1.1em;
 }
