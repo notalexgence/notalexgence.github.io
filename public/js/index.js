@@ -1,5 +1,8 @@
-let titleStr = "notalexgence";
+// let titleStr = "notalexgence";
 let title = document.querySelector("header > h1");
+let titleStr = title.textContent;
+
+title.innerHTML = "";
 
 for (let i = 0; i < titleStr.length; i++) {
     let str = document.createTextNode(titleStr[i]);
@@ -8,6 +11,8 @@ for (let i = 0; i < titleStr.length; i++) {
     span.append(str);
     title.append(span);
 }
+
+console.log(title.textContent);
 
 // let times = ["500ms", "1s", "1.5s", "2s", "2.5s", "3s"];
 let times = ["2s", "2.5s", "3s", "4s", "5s", "6s", "7s"];
