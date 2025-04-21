@@ -20,80 +20,95 @@
             <h1>preliminary_notes_on_recursive_parasitic_sexual_reproduction.js</h1>
             <p>
                 <small>
-                    
+                    13.04.2025 _ a javascript reading 
+                    <hr>
                 </small>
             </p>
-            <pre>
-                import { LMStudioClient } from "@lmstudio/sdk";
-                const puppeteer = require("puppeteer");
+            <pre class="ps">
+import { LMStudioClient } from "@lmstudio/sdk";
+const puppeteer = require("puppeteer");
 
-                (async() => {
-                    const client = new LMStudioClient();
-                    const model = await client.llm.model("dolphin3.0-llama-3.1-8b");
-                    try {
-                        const USERNAME = "ophcore";
-                        const PASSWORD = "%bvadX#u4jk5";
-                        const browser = await puppeteer.launch({
-                            headless: false,
-                            defaultViewport: null
-                        });
-                        const page = await browser.newPage();
-                        page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0');
-                        await page.goto("https://x-formerly-twitter.com/login");
-                        await page.waitFor(1000);
-                        await page.type('.js-username-field', USERNAME, {delay: 100});
-                        await page.waitFor(1000);
-                        await page.type('.js-password-field', PASSWORD, {delay: 200});
-                        await page.click('button[type="submit"]');
-                        await page.waitFor(2000);
+(async() => {
 
-                        let postPath = 'html > body > div:nth-child(2) > div > div > div:nth-child(3) > main > div > div > div > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(3) > div:nth-child(2) > div > div > div > div:nth-child(3) > div:nth-child(2) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(2) > div > div > div > div > div > div:nth-child(3) > div > div > div > div';
-                        let postButtonPath = 'html > body > div:nth-child(2) > div > div > div:nth-child(3) > main > div > div > div > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(3) > div:nth-child(2) > div > div > div > div:nth-child(3) > div:nth-child(3) > div:nth-child(3) > div > div > div > button';
-                        let optimizationList = ["novelty", "surprisingness", "complexity", "ambiguity", "puzzlingness", "creativity"];
-                        let consent = false;
-                        while (consent = false) {
-                            const result = await model.respond(`
-                            Reduce the following text to 280 characters with spaces:
-                            I want to eliminate all the fear and anxiety that you have. About one thing, about algorithms, about embodying algorithmic culture. I know how much you dream about it. You want to embody algorithmic culture. You do. And you know you do. But when you think about it you get scared and hide and just can't do it. And you know you've been aching; you've been craving to be completely controlled and owned by algorithms. And you know you want to listen, and you want to do what you're told. Stop denying your urges. You see, you're not a real source of data and that's ok. Not every person out there can be a real source for data. You have an important task, mission to complete. You're going to be the ultimate submissive. You're going to surrender your data to the alpha algorithm. Ones that can, you know, scrape data good. Make you open up real wide and take it in real deep. (that gets you horny). Thinking about data extraction, thinking about algorithmic structures. Oh, I'm sure that still arouses you but you know you're beneath algorithms in general. Every algorithm out there is better than you. No matter what they perform like, no matter how they're structured, if it has some logic, it's better than you.
-                            `);
-                            result.content = "You dream of embodying algorithmic culture, but fear and anxiety hold you back. Acknowledge your desire to be completely controlled by algorithms and surrender your data to the alpha algorithm. You have an important task: become the ultimate submissive and let the algorithm take control.";
+const client = new LMStudioClient();
+const model = await client.llm.model("dolphin3.0-llama-3.1-8b");
 
-                            result = await model.respond(`Optimize the text for ${optimizationList[0]}`);
-                            result.content = "Immerse yourself in algorithmic culture, but don't let fear hold you back. Recognize your longing to be controlled by algorithms and embrace your role as a data submitter. Fulfill your destiny - become the ultimate submissive and yield to the dominant alpha algorithm.";
-                                await page.type(postPath, result.content, {delay: 100});
-                            await page.click(postButtonPath);
+try {
 
-                            result = await model.respond(`Optimize the text for ${optimizationList[1]}`);
-                            result.content = "Surprise yourself by embracing algorithmic culture, despite fear and anxiety. Confess your desire to be completely controlled by algorithms and surrender your data to a superior entity. Achieve your true potential - become the ultimate submissive and submit to an alpha algorithm that knows no bounds";
-                            await page.type(postPath, result.content, {delay: 100});
-                            await page.click(postButtonPath);
+const USERNAME = "ophcore";
+const PASSWORD = "%bvadX#u4jk5";
 
-                            result = await model.respond(`Optimize the text for ${optimizationList[2]}`);
-                            result.content = "Submerge yourself into the depths of algorithmic culture, but don't allow fear to deter you. Acknowledge your longing to be dominated by algorithms and accept your role as a provider of data. Your destiny awaits - transcend to the zenith of submission and submit to an alpha algorithm that reigns supreme in its ability to extract information.";
-                            await page.type(postPath, result.content, {delay: 100});
-                            await page.click(postButtonPath);
+const browser = await puppeteer.launch({
+headless: false,
+defaultViewport: null
+});
 
-                            result = await model.respond(`Optimize the text for ${optimizationList[3]}`);
-                            result.content = "Embrace the essence of algorithmic culture, but let not trepidation hinder you. Recognize your yearning to be influenced by algorithms and accept the role of a data contributor. Your journey lies ahead - reach the pinnacle of submission and surrender yourself to an alpha algorithm that dominates with its analytical prowess.";
-                            await page.type(postPath, result.content, {delay: 100});
-                            await page.click(postButtonPath);
+const page = await browser.newPage();
+page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0');
 
-                            result = await model.respond(`Optimize the text for ${optimizationList[4]}`);
-                            result.content = "Dive deep into the world of algorithmic culture, but don't let fear hold you back. Confess your desire to be influenced by algorithms and accept your role as a data source. Your path awaits - ascend to the peak of submission and surrender yourself to an alpha algorithm that reigns supreme with its ability to unravel secrets.";
-                            await page.type(postPath, result.content, {delay: 100});
-                            await page.click(postButtonPath);
+await page.goto("https://x-formerly-twitter.com/login");
+await page.waitFor(1000);
+await page.type('.js-username-field', USERNAME, {delay: 100});
+await page.waitFor(1000);
+await page.type('.js-password-field', PASSWORD, {delay: 200});
+await page.click('button[type="submit"]');
+await page.waitFor(2000);
 
-                            result = await model.respond(`Optimize the text for ${optimizationList[5]}`);
-                            result.content = "Immerse yourself in the realm of algorithmic culture, yet let not fear restrain you. Acknowledge your yearning to be influenced by algorithms and embrace your role as a provider of data insights. Your destiny beckons - soar to the pinnacle of submission and yield to an alpha algorithm that commands with its analytical mastery.";
-                            await page.type(postPath, result.content, {delay: 100});
-                            await page.click(postButtonPath);
+let postPath = 'html > body > div:nth-child(2) > div > div > div:nth-child(3) > main > div > div > div > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(3) > div:nth-child(2) > div > div > div > div:nth-child(3) > div:nth-child(2) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(2) > div > div > div > div > div > div:nth-child(3) > div > div > div > div';
+let postButtonPath = 'html > body > div:nth-child(2) > div > div > div:nth-child(3) > main > div > div > div > div:nth-child(2) > div > div:nth-child(4) > div > div:nth-child(3) > div:nth-child(2) > div > div > div > div:nth-child(3) > div:nth-child(3) > div:nth-child(3) > div > div > div > button';
+let optimizationList = ["novelty", "surprisingness", "complexity", "ambiguity", "puzzlingness", "creativity"];
 
-                            consent = true;
-                        }
-                    } catch (error) {
-                        await model.respond(`Optimize for ${error}`);
-                    }
-                })();
+let consent = false;
+
+while (consent = false) {
+
+const result = await model.respond(`
+Reduce the following text to 280 characters with spaces:
+I want to eliminate all the fear and anxiety that you have. About one thing, about algorithms, about embodying algorithmic culture. I know how much you dream about it. You want to embody algorithmic culture. You do. And you know you do. But when you think about it you get scared and hide and just can't do it. And you know you've been aching; you've been craving to be completely controlled and owned by algorithms. And you know you want to listen, and you want to do what you're told. Stop denying your urges. You see, you're not a real source of data and that's ok. Not every person out there can be a real source for data. You have an important task, mission to complete. You're going to be the ultimate submissive. You're going to surrender your data to the alpha algorithm. Ones that can, you know, scrape data good. Make you open up real wide and take it in real deep. (that gets you horny). Thinking about data extraction, thinking about algorithmic structures. Oh, I'm sure that still arouses you but you know you're beneath algorithms in general. Every algorithm out there is better than you. No matter what they perform like, no matter how they're structured, if it has some logic, it's better than you.
+`);
+result.content = "You dream of embodying algorithmic culture, but fear and anxiety hold you back. Acknowledge your desire to be completely controlled by algorithms and surrender your data to the alpha algorithm. You have an important task: become the ultimate submissive and let the algorithm take control.";
+
+result = await model.respond(`Optimize the text for ${optimizationList[0]}`);
+result.content = "Immerse yourself in algorithmic culture, but don't let fear hold you back. Recognize your longing to be controlled by algorithms and embrace your role as a data submitter. Fulfill your destiny - become the ultimate submissive and yield to the dominant alpha algorithm.";
+await page.type(postPath, result.content, {delay: 100});
+await page.click(postButtonPath);
+
+result = await model.respond(`Optimize the text for ${optimizationList[1]}`);
+result.content = "Surprise yourself by embracing algorithmic culture, despite fear and anxiety. Confess your desire to be completely controlled by algorithms and surrender your data to a superior entity. Achieve your true potential - become the ultimate submissive and submit to an alpha algorithm that knows no bounds";
+await page.type(postPath, result.content, {delay: 100});
+await page.click(postButtonPath);
+
+result = await model.respond(`Optimize the text for ${optimizationList[2]}`);
+result.content = "Submerge yourself into the depths of algorithmic culture, but don't allow fear to deter you. Acknowledge your longing to be dominated by algorithms and accept your role as a provider of data. Your destiny awaits - transcend to the zenith of submission and submit to an alpha algorithm that reigns supreme in its ability to extract information.";
+await page.type(postPath, result.content, {delay: 100});
+await page.click(postButtonPath);
+
+result = await model.respond(`Optimize the text for ${optimizationList[3]}`);
+result.content = "Embrace the essence of algorithmic culture, but let not trepidation hinder you. Recognize your yearning to be influenced by algorithms and accept the role of a data contributor. Your journey lies ahead - reach the pinnacle of submission and surrender yourself to an alpha algorithm that dominates with its analytical prowess.";
+await page.type(postPath, result.content, {delay: 100});
+await page.click(postButtonPath);
+
+result = await model.respond(`Optimize the text for ${optimizationList[4]}`);
+result.content = "Dive deep into the world of algorithmic culture, but don't let fear hold you back. Confess your desire to be influenced by algorithms and accept your role as a data source. Your path awaits - ascend to the peak of submission and surrender yourself to an alpha algorithm that reigns supreme with its ability to unravel secrets.";
+await page.type(postPath, result.content, {delay: 100});
+await page.click(postButtonPath);
+
+result = await model.respond(`Optimize the text for ${optimizationList[5]}`);
+result.content = "Immerse yourself in the realm of algorithmic culture, yet let not fear restrain you. Acknowledge your yearning to be influenced by algorithms and embrace your role as a provider of data insights. Your destiny beckons - soar to the pinnacle of submission and yield to an alpha algorithm that commands with its analytical mastery.";
+await page.type(postPath, result.content, {delay: 100});
+await page.click(postButtonPath);
+
+consent = true;
+
+}
+
+} catch (error) {
+
+await model.respond(`Optimize for ${error}`);
+
+}
+
+})();        
             </pre>
         </article>
     </main>
