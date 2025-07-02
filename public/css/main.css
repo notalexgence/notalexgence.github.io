@@ -160,6 +160,10 @@ article pre {
 	text-wrap: auto;
 }
 
+article img {
+	width: 50%;
+}
+
 .ps {
 	-webkit-user-select: none;
 	-ms-user-select: none;
